@@ -13,23 +13,19 @@ public class CustomerBase {
 	public List<Customer> findBy(String TypeOfFind,String firstName,String lastName,int credit) {
 		List<Customer> result = new ArrayList<Customer>();
 		if(TypeOfFind=="LastName"){
-			LastName lastname = new LastName(lastName,customers);
-			FindMode findMode = lastname;
+			FindMode findMode =  new LastName(lastName,customers);
 			result = findMode.find();
 		}
-		if(TypeOfFind=="FirstAndLastName"){
-			FirstNameLastName firstnameAndlastname = new FirstNameLastName(firstName,lastName,customers);
-			FindMode findMode = firstnameAndlastname;
+		if(TypeOfFind=="FirstAndLastName"){			
+			FindMode findMode = new FirstNameLastName(firstName,lastName,customers);
 			result = findMode.find();
 		}
 		if(TypeOfFind=="CreditGreaterThan"){
-			CreditGreaterThan creditGreaterThan = new CreditGreaterThan(credit,customers);
-			FindMode findMode = creditGreaterThan;
+			FindMode findMode = new CreditGreaterThan(credit,customers);
 			result = findMode.find();
 		}
 		if(TypeOfFind=="CreditLessThan"){
-			CreditLessThan creditLessThan = new CreditLessThan(credit,customers);
-			FindMode findMode = creditLessThan;
+			FindMode findMode = new CreditLessThan(credit,customers);
 			result = findMode.find();
 		}
 		return result;
