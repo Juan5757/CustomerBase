@@ -26,25 +26,25 @@ public class CustomerBaseTest {
 
 	@Test
 	public void findByLastName() throws Exception {
-		List<Customer> found = customerBase.findByLastName("Rossi");
+		List<Customer> found = customerBase.findBy("LastName","","Rossi",0);
 		assertThat(found, is(asList(alice, bob)));
 	}
 
 	@Test
 	public void findByFirstAndLastName() throws Exception {
-		List<Customer> found = customerBase.findByFirstAndLastName("Alice", "Rossi");
+		List<Customer> found = customerBase.findBy("FirstAndLastName","Alice", "Rossi",0);
 		assertThat(found, is(asList(alice)));
 	}
 
 	@Test
 	public void findWithCreditGreaterThan() throws Exception {
-		List<Customer> found = customerBase.findByCreditGreaterThan(20000);
+		List<Customer> found = customerBase.findBy("CreditGreaterThan","","",20000);
 		assertThat(found, is(asList(charlie)));
 	}
 
 	@Test
 	public void findWithCreditLessThan() throws Exception {
-		List<Customer> found = customerBase.findWithCreditLessThan(20000);
+		List<Customer> found = customerBase.findBy("CreditLessThan","","",20000);
 		assertThat(found, is(asList(alice)));
 		// ...
 		// We're sick and tired of adding new methods to CustomerBase.
