@@ -40,4 +40,17 @@ public class CustomerBase {
 		return result;
 	}
 
+	public List<Customer> findWithCreditLessThan(int credit) {
+		// TODO Auto-generated method stub
+		List<Customer> result = new ArrayList<Customer>();
+		for (Customer customer : customers) {
+			if (customer.credit() < credit) {
+				result.add(customer);
+			}
+		}
+		return result;
+	}
+
+	
+
 }

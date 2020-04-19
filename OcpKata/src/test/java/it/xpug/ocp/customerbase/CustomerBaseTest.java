@@ -44,7 +44,8 @@ public class CustomerBaseTest {
 
 	@Test
 	public void findWithCreditLessThan() throws Exception {
-		fail("open-closed violation");
+		List<Customer> found = customerBase.findWithCreditLessThan(20000);
+		assertThat(found, is(asList(alice)));
 		// ...
 		// We're sick and tired of adding new methods to CustomerBase.
 		// CHALLENGE: can you refactor CustomerBase and its tests
