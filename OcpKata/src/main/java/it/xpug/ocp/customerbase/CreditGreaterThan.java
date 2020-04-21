@@ -8,8 +8,8 @@ public class CreditGreaterThan implements FindMode {
 	int credit;
 	List<Customer> customers;
 	
-	CreditGreaterThan(int credit,List<Customer> customers){
-		this.credit=credit;
+	CreditGreaterThan(Customer customer,List<Customer> customers){
+		credit= customer.credit();
 		this.customers=customers;
 	}
 	

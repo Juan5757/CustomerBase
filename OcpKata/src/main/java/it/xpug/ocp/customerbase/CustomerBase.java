@@ -10,22 +10,22 @@ public class CustomerBase {
 		customers.add(customer);
 	}
 	
-	public List<Customer> findBy(String TypeOfFind,String firstName,String lastName,int credit) {
+	public List<Customer> findBy(String TypeOfFind,Customer customer) {
 		List<Customer> result = new ArrayList<Customer>();
 		if(TypeOfFind=="LastName"){
-			FindMode findMode =  new LastName(lastName,customers);
+			FindMode findMode =  new LastName(customer,customers);
 			result = findMode.find();
 		}
 		if(TypeOfFind=="FirstAndLastName"){			
-			FindMode findMode = new FirstNameLastName(firstName,lastName,customers);
+			FindMode findMode = new FirstNameLastName(customer,customers);
 			result = findMode.find();
 		}
 		if(TypeOfFind=="CreditGreaterThan"){
-			FindMode findMode = new CreditGreaterThan(credit,customers);
+			FindMode findMode = new CreditGreaterThan(customer,customers);
 			result = findMode.find();
 		}
 		if(TypeOfFind=="CreditLessThan"){
-			FindMode findMode = new CreditLessThan(credit,customers);
+			FindMode findMode = new CreditLessThan(customer,customers);
 			result = findMode.find();
 		}
 		return result;

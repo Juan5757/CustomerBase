@@ -9,9 +9,9 @@ public class FirstNameLastName implements FindMode {
 	String lastName;
 	List<Customer> customers;
 	
-	FirstNameLastName(String firstName,String lastName,List<Customer> customers){
-		this.firstName = firstName;
-		this.lastName = lastName;
+	FirstNameLastName(Customer customer,List<Customer> customers){
+		firstName = customer.firstName();
+		lastName = customer.lastName();
 		this.customers = customers;
 	}
 	

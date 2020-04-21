@@ -8,8 +8,8 @@ public class CreditLessThan implements FindMode {
 	int credit;
 	List<Customer> customers;
 	
-	CreditLessThan(int credit,List<Customer> customers){
-		this.credit=credit;
+	CreditLessThan(Customer customer,List<Customer> customers){
+		credit=customer.credit();
 		this.customers=customers;
 	}
 	

@@ -8,8 +8,8 @@ public class LastName implements FindMode{
 	String lastName;
 	List<Customer> customers;
 	
-	LastName(String lastName,List<Customer> customers){
-		this.lastName = lastName;
+	LastName(Customer customer,List<Customer> customers){
+		lastName = customer.lastName();
 		this.customers = customers;
 	}
 	
